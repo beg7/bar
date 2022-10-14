@@ -1,0 +1,33 @@
+{{ $types := dict
+    "Шейкер"                        "/images/shaker.jpg"
+    "Стакан для смешивания"         "/images/mixing_glass.jpg"
+    "Питчер"                        "/images/milk_pitcher.jpg"
+    "Коктейльная ложка"             "/images/calabrese_teardrop.jpg"
+    "Шампанское блюдце"             "/images/champagne_saucer.jpg"
+    "Коктейльный бокал"             "/images/cocktail_glass.jpg"
+    "Бокал для вина"                "/images/wine_glass.jpg"
+    "Бокал для ирландского кофе"    "/images/irih_glass.jpg"
+    "Бокал маргарита"               "/images/margarita_glass.jpg"
+    "Бокал сауэр"                   "/images/sauer.jpg"
+    "Коктейльный бокал"             "/images/cocktail_glass.jpg"
+    "Коньячный бокал"               "/images/cognac_glass.jpg"
+    "Коллинз"                       "/images/collins_glass.jpg"
+    "Пинта"                         "/images/pint_glass.jpg"
+    "Рокс"                          "/images/rocks_glass.jpg"
+    "Слинг"                         "/images/sling_glass.jpg"
+    "Стопка"                        "/images/stopka.jpg"
+    "Тики-бокал"                    "/images/tiki_bokal.jpg"
+    "Хайбол"                        "/images/hight_ball.jpg"
+    "Харрикейн"                     "/images/hurricane.jpg"
+    "Флюте"                         "/images/flute.jpg"
+    "Шампанское блюдце"             "/images/champagne_saucer.jpg"
+}}
+
+{{ $type := .Get "name" }}
+<p class="cooking-option">
+    {{ range split $type ","}}
+        {{ if $value := index $types (trim . " ") }}
+        <img src="{{ $value }}" alt="{{ . }}">
+        {{ end }}    
+    {{ end }}
+</p>

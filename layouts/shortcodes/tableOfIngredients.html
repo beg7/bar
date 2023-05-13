@@ -1,0 +1,7 @@
+{{ $htmlTable := .Inner  }}
+{{ range .Page.Params.ingredients }}
+  {{ $new := printf "[%s](/ingredients/%s)" ( . | safeHTML) ( lower (replace . ` ` `-`) | safeURL) }}
+  {{ $old := . }}
+  {{ $htmlTable = replace $htmlTable $old $new }}
+{{ end }}
+{{ $htmlTable | markdownify | safeHTML }}

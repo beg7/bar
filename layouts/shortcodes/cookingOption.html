@@ -1,32 +1,7 @@
-{{ $types := dict
-    "Шейкер"                        "/bar/images/shaker.jpg"
-    "Стакан для смешивания"         "/bar/images/mixing_glass.jpg"
-    "Питчер"                        "/bar/images/milk_pitcher.jpg"
-    "Коктейльная ложка"             "/bar/images/calabrese_teardrop.jpg"
-    "Шампанское блюдце"             "/bar/images/champagne_saucer.jpg"
-    "Коктейльный бокал"             "/bar/images/cocktail_glass.jpg"
-    "Бокал для вина"                "/bar/images/wine_glass.jpg"
-    "Бокал для ирландского кофе"    "/bar/images/irih_glass.jpg"
-    "Бокал маргарита"               "/bar/images/margarita_glass.jpg"
-    "Бокал сауэр"                   "/bar/images/sauer.jpg"
-    "Коктейльный бокал"             "/bar/images/cocktail_glass.jpg"
-    "Коньячный бокал"               "/bar/images/cognac_glass.jpg"
-    "Коллинз"                       "/bar/images/collins_glass.jpg"
-    "Пинта"                         "/bar/images/pint_glass.jpg"
-    "Рокс"                          "/bar/images/rocks_glass.jpg"
-    "Слинг"                         "/bar/images/sling_glass.jpg"
-    "Стопка"                        "/bar/images/stopka.jpg"
-    "Тики-бокал"                    "/bar/images/tiki_bokal.jpg"
-    "Хайбол"                        "/bar/images/hight_ball.jpg"
-    "Харрикейн"                     "/bar/images/hurricane.jpg"
-    "Флюте"                         "/bar/images/flute.jpg"
-    "Шампанское блюдце"             "/bar/images/champagne_saucer.jpg"
-}}
-
 {{ $type := .Get "name" }}
 <p class="cooking-option">
     {{ range split $type ","}}
-        {{ if $value := index $types (trim . " ") }}
+        {{ if $value := index $.Site.Data.cookingItems (trim . " ") }}
         <img src="{{ $value }}" alt="{{ . }}">
         {{ end }}    
     {{ end }}

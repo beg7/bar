@@ -23,6 +23,7 @@ kinds:
 
 ### Ингредиенты
 
+{{<tableOfIngredients>}}
 |                  |        |
 | ---------------- | -----: |
 | Тёмный ром       |  45 мл |
@@ -34,6 +35,7 @@ kinds:
 | Ангостура биттер |  1 даш |
 | Лед краш         | 200 гр |
 {.headless-table}
+{{</tableOfIngredients>}}
 
 {{<cookingOption name="Шейкер, Хайбол">}}
 

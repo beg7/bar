@@ -1,7 +1,7 @@
 {{ define "main" }}
 
     <div class="post-list-container post-list-container-no-background">
-        {{range .Paginator.Pages}}
+        {{range (.Paginate .Pages.ByTitle).Pages }}
             {{if and (.IsPage) (.Params.date)}}
             <a href="{{.RelPermalink}}" class="a-block">
                 <div class="post-item-wrapper">
@@ -12,7 +12,7 @@
                             </div>
                             <div class="post-item-summary">
                                 {{range .Params.kinds}}
-                                    <span class="badge">{{.}}2</span>
+                                    <span class="badge">{{.}}</span>
                                 {{end}}
                             </div>
                         </div>
